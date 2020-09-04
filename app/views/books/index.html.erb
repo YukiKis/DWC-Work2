@@ -1,0 +1,51 @@
+<div class="page">
+ <span class="notice"><%= notice %></span>
+ <section class="index">
+ <h1 class="heading">Books</h1>
+  <table class="table">
+   <tr>
+     <th class="table-title">Title</th>
+     <th class="table-body">Body</th>
+     <th colspan="3"></th>
+   </tr>
+   <% @books.each do |book| %>
+     <tr>
+      <td><%= book.title %></td>
+      <td><%= book.body %></td>
+      <td><%= link_to "Show", book_path(book.id), class:"link" %></td>
+      <td><%= link_to "Edit", edit_book_path(book.id), class:"link" %></td>
+      <td><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?", class:"link" %></td>
+     </tr>
+   <% end %>
+   </tr>
+ </table>
+ </section>
+
+ <section class="new">
+ <h1 class="heading">New Book</h1>
+   <% if @book.errors.any? %>
+    <section class="error">
+      <h2 class="error-count"><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+      <ul class="error-list">
+      <!--error pluralize-->
+       <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+       <% end %>
+      </ul>
+     </section>
+   <% end %>
+ </section>
+
+ <%= form_with model:@book, local:true do |f| %>
+   <div style="margin-bottom: 10px;">
+   <div><%= f.label :title, class: "title-label label"%></div>
+   <div><%= f.text_field :title, class: "title-text textbox" %></div>
+   </div>
+   <div style="margin-bottom: 10px;">
+    <div><%= f.label :body, class: "body-label label"%></div>
+    <div><%= f.text_area :body, class: "body-text textbox"%></div>
+   </div>
+    <%= f.submit "Create Book"%>
+ <% end %>
+ </section>
+</div>

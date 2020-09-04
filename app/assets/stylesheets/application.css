@@ -1,0 +1,122 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/*リセットCSS*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing :border-box;
+  font-size: 13px;
+}
+
+.link{
+  color: #6a6b6b;
+}
+
+.page .edit .link{
+  margin: 10px 0;
+}
+
+.label{
+  font-size: 12px;
+}
+
+.button{
+  margin-top: 15px;
+}
+
+.field_with_errors{
+  display: table;
+  background-color: red;
+  padding: 2px;
+}
+
+.notice{
+  color: green;
+}
+
+.error{
+  margin: 30px 0;
+}
+
+.error .error-list{
+  width: 500px;
+  border: 3px solid #ff0000;
+  padding: 30px 30px;
+  list-style: inside;
+  background-color: #f7f7f7;
+}
+
+.error .error-count{
+  width: 500px;
+  padding: 5px 10px;
+  background-color: red;
+  color: #fff;
+}
+
+.page {
+  margin: 30px;
+}
+
+/*top*/
+.heading{
+  font-size: 23px;
+}
+
+.top .content{
+  font-size: 12px;
+  padding: 30px;
+  line-height: 4;
+}
+
+
+.top .content .link:hover{
+  background-color: #000000;
+  color: #fff;
+}
+
+/*index*/
+.page .index{
+  margin: 20px 0;
+}
+
+.page .index .table{
+  border-collapse: separate;
+  border-spacing: 10px;
+  border: none;
+}
+
+.page .index .table tr th{
+  text-align: center;
+  font-weight: bold;
+}
+
+
+/*show*/
+.show .show-content{
+  font-size: 15px;
+  margin: 30px 30px;
+}
+
+.show .show-content.notice{
+  color: green;
+}
+
+.show .show-content .title,
+.show .show-content .body{
+  margin: 30px 0;
+}
+
+/*edit*/

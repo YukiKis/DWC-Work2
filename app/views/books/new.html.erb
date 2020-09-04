@@ -1,0 +1,18 @@
+<section class=""
+<h1 class="heading">New Book</h1>
+<div class="error">
+  <% if @book.errors.any? %>
+    <ul class="error-list">
+      <% @book.errors.full_messages.each do |message| %>
+        <li class="error-list-item"><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+<%= form_with model:@book, local:true do |f| %>
+<p class="title-label"><%= f.label :title %></p>
+<p class="title-text"><%= f.text_field :title %></p>
+<p class="body-label"><%= f.label :body %></p>
+<p class="body-text"><%= f.text_area :body %></p>
+<p class="button submit-button"><%= f.submit "Create Book" %></p>
+<% end %>
